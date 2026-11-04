@@ -12,6 +12,21 @@ def bubble_sort(arr, sorting_order):
     # Get number of elements in the list
     n = len(arr_result)
 
+    # REQ-03: if 10 or more numbers are entered, return 1
+    if n >= 10:
+        return 1
+
+    #REQ-04: if 0 numbers are entered, return 0
+    if n == 0 :
+        return 0
+
+
+    # REQ-05: if any value is not an integer, return 2
+    for value in arr:
+        if not isinstance(value, int) or isinstance(value, bool):
+            return 2
+
+    
     if n < 10:
         # Traverse through all array elements
         for i in range(n - 1):
@@ -21,11 +36,12 @@ def bubble_sort(arr, sorting_order):
             # Last i elements are already in place
             for j in range(0, n - i - 1):
 
+                #REQ-01
                 if sorting_order == SORT_ASCENDING:
                     if arr_result[j] > arr_result[j + 1]:
                         arr_result[j], arr_result[j + 1] = arr_result[j + 1], arr_result[j]
 
-
+                #REQ-02
                 elif sorting_order == SORT_DESCENDING:
                     if arr_result[j] < arr_result[j + 1]:
                         arr_result[j], arr_result[j + 1] = arr_result[j + 1], arr_result[j]
