@@ -28,3 +28,17 @@ def test_bubble_sort_invalid():
     result = Lab3.bubble_sort(input_arr, 3)
 
     assert (result == [])
+
+#EDITED PART AS PER EXERCISE 2
+
+def test_bubble_sort_too_many():
+    arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert Lab3.bubble_sort(arr, Lab3.SORT_ASCENDING) == 1
+
+def test_bubble_sort_empty():
+    arr = []
+    assert Lab3.bubble_sort(arr, Lab3.SORT_ASCENDING) == 0
+
+def test_bubble_sort_non_integer():
+    arr = [5, 3, "meow", 1]
+    assert Lab3.bubble_sort(arr, Lab3.SORT_ASCENDING) == 2
